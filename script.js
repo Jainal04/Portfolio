@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chipsEl) {
       const chips = [
         { label: 'Location',    value: p.location },
-        { label: 'Experience',  value: p.experienceYears },
+        { label: 'Occupation',  value: p.experienceYears },
         { label: 'Status',      value: p.status },
       ];
       chipsEl.innerHTML = chips.map(c => `
@@ -297,8 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
 
-    const O = '#111827'; // dark outline (near-black navy)
-    const F = '#2D3561'; // dark navy fill
+    const O = '#eb4203';
+    const F = '#23ced9';
     const _ = null;      // transparent — canvas default, skip drawing
 
 
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // null entries are transparent gaps inside the cursor.
     const map = [
       [O],
-      [O,F],
+      [O,O],
       [O,F,O],
       [O,F,F,O],
       [O,F,F,F,O],
@@ -318,11 +318,11 @@ document.addEventListener('DOMContentLoaded', () => {
       [O,F,F,F,F,F,F,O],
       [O,F,F,F,F,F,F,F,O],
       [O,F,F,F,F,F,F,F,F,O],  // widest — 10 logical px
-      [O,F,F,F,F,O],           // notch: right side cuts inward
-      [O,F,F,O,_,F,F,O],       // notch gap (col 4 transparent) + tail
-      [O,F,O,_,_,O,F,F,O],
-      [O,O,_,_,_,_,O,F,O],
-      [_,_,_,_,_,_,_,O,O],     // tail tip
+      [O,F,F,F,O,O,O,O,O,O,O],           // notch: right side cuts inward
+      [O,F,F,O,_,_,_,_],       // notch gap (col 4 transparent) + tail
+      [O,F,O,_,_,_,_,_,_],
+      [O,O,_,_,_,_,_,_,_],
+      [O,_,_,_,_,_,_,_,_]    
     ];
 
 
